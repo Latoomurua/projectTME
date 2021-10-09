@@ -30,6 +30,3 @@ function cards (showroom) {
                                             </div>`);
     }
 }*/
-
-
-dawdad
