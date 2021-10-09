@@ -19,16 +19,16 @@ const filtroMarcas = showrooms.filter(function (showroom){
 //JS EN HTML CON JQUERY
 
 $(document).ready(() => {
-    $("#navTME").append(`<div class="row bgImg">
+    $("#navMenuPrincipal").append(`<div class="row bgImgMenuPrincipal">
     <div class="col-lg-6 col-xs-12">
-      <img src="images/logoTMENpng.png" alt="Logotipo TME" class="paddingLogo">
+      <img src="/projectTME/TME/images/logoTMENpng.png" alt="Logotipo TME" class="paddingLogo">
       <h1>Otra forma
       <br> de comprar</h1>
-      <button id="boton" type="button" class="btn btn-warning"><strong>Empeza a comprar</strong></button>   
+      <button id="botonM" type="button" class="btn btn-warning"><strong>Empeza a comprar</strong></button>   
     </div>
     <nav class="col-lg-6 col-xs-12 parametrosNav spaceImg">
-      <img src="/images/igLogo-01.png" width="40" alt="" height="40">
-      <img src="/images/fbLogo.png" width="40" alt="" height="40">
+      <img src="/projectTME/TME/images/igLogo-01.png" width="40" alt="" height="40">
+      <img src="/projectTME/TME/images/fbLogo.png" width="40" alt="" height="40">
     </nav>
   </div>`)
 
@@ -110,7 +110,7 @@ $(document).ready(() => {
       <div class="row row-cols-1 row-cols-md-2">
         <div class="col mb-4">
           <div class="card">
-            <img src="/images/adidasCard.png" class="card-img-top" alt="Logotipo Adidas">
+            <img src="/projectTME/TME/images/adidasCard.png" class="card-img-top" alt="Logotipo Adidas">
             <div class="card-body">
               <h5 class="card-title">Adidas</h5>
               <p class="card-text">Showroom destacado del mes</p>
@@ -119,7 +119,7 @@ $(document).ready(() => {
         </div>
         <div class="col mb-4">
           <div class="card">
-            <img src="/images/nikeCard.jpg" class="card-img-top" alt="Logotipo Nike">
+            <img src="/projectTME/TME/images/nikeCard.jpg" class="card-img-top" alt="Logotipo Nike">
             <div class="card-body">
               <h5 class="card-title">Nike</h5>
               <p class="card-text">Showroom destacado del mes</p>
@@ -128,7 +128,7 @@ $(document).ready(() => {
         </div>
         <div class="col mb-4">
           <div class="card">
-            <img src="/images/pumaCard.png" class="card-img-top" alt="Logotipo Puma">
+            <img src="/projectTME/TME/images/pumaCard.png" class="card-img-top" alt="Logotipo Puma">
             <div class="card-body">
               <h5 class="card-title">Puma</h5>
               <p class="card-text">Showroom destacado del mes</p>
@@ -137,7 +137,7 @@ $(document).ready(() => {
         </div>
         <div class="col mb-4">
           <div class="card">
-            <img src="/images/topperCard.jpg" class="card-img-top" alt="Logotipo Reebok">
+            <img src="/projectTME/TME/images/topperCard.jpg" class="card-img-top" alt="Logotipo Reebok">
             <div class="card-body">
               <h5 class="card-title">Reebok</h5>
               <p class="card-text">Showroom destacado del mes</p>
@@ -153,16 +153,25 @@ $(document).ready(() => {
 $(document).ready(() => {
     $("#footerTME").append(`<footer class="row parametrosFooter">
     <footer class="col-lg-4 col-xs-12 spaceImg">
-      <img src="/images/igLogo-01.png" width="40" alt="" height="40">
-      <img src="/images/fbLogo.png" width="40" alt="" height="40">
+      <img src="/projectTME/TME/images/igLogo-01.png" width="40" alt="" height="40">
+      <img src="/projectTME/TME/images/fbLogo.png" width="40" alt="" height="40">
     </footer>
     <footer class="col-lg-4">
-      <img src="/images/logoTME-01.png" alt="">
+      <img src="/projectTME/TME/images/logoTME-01.png" alt="">
     </footer>
     <footer class="col-lg-4">
-      <button type="button" class="btn btn-warning"><strong>Quejas y sugerencias</strong></button>
+      <button type="button" class="btn btn-warning" ><strong><a href="/views/quejas.html">Quejas y sugerencias</a></strong></button>
     </footer>
   </footer>`)
 
 });
 
+
+$("#botonM").click(function(e){
+  e.preventDefault();
+  $("html,body").animate({
+      scrollTop: $("#footerTME").offset().top
+  }, 1000);
+})
+
+//despues volvemos al inicio

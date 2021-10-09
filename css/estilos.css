@@ -7256,7 +7256,7 @@
       background-color: gainsboro;
     }
 
-    div .bgImg
+    div .bgImgMenuPrincipal
     {background-image: url("../images/homeImage.jpg");  
     background-attachment: fixed;
     background-size: cover;
@@ -7342,4 +7342,40 @@
       justify-content: center;
     }
 
-    
+    div ul li a:hover{
+      color: orange !important;
+    }
+
+    footer a{
+      color: white;
+    }
+
+
+@media (max-width: 768px) {
+  #cardDestacada {
+    display: none;
+  }
+ }
+
+ div .bgImgQueYSug
+ {background-image: url("/projectTME/TME/images/shopping.jpg");  
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;}
+
+  .jumbotron{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    opacity: 70%;
+  }
+
+  nav ol li{
+    list-style: none;
+    color: orange !important;
+    margin-bottom: 15 px;
+    margin-top: 15px;
+  }
