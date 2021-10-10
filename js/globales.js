@@ -1,3 +1,5 @@
 //variables de acceso global
 
-const showrooms = []; 
+const productos = [];
+const carrito = [];
+const categorias = ['remeras', 'zapatillas','camperas', 'pantalones', 'medias']

@@ -1,3 +1,81 @@
+
+//Utilizo el metodo HIDE para ocultar todo lo que esta en el div productosContenedor
+$('#productosContenedor').hide();
+
+//Utilizo una llamada asincrona para traer los datos desde un JSON
+$.get("data/productos.json", function (respuesta, estado) {
+    console.dir(respuesta);   
+    console.log(estado);
+    //Pregunto si el estado de la operacion fue exitoso
+    if(estado == "success"){
+        //Recorro el array respuesta y lo transformo a objetos de tipo "producto"
+        for (const objeto of respuesta) { 
+            //Guardo los objetos "traducidos" en el array productos           
+            productos.push( new Producto(objeto.id, objeto.ciudad, objeto.precioProducto, objeto.img, objeto.categoria, objeto.cantidad ) );
+       
+        }  
+        //GENERAR INTERFAZ DE PRODUCTOS CON UNA FUNCION
+        productosUI(productos, '#productosContenedor');
+    }else{
+        console.log('Los datos no se cargaron correctamente');
+    }  
+    
+});
+
+$(document).ready(function () {
+    //Asocio en evento click a los botones con la clase btn-compra       
+    $(".btn-compra").click(comprarProducto);  
+    //---------SCROLL ANIMADO-----------
+    //1° USO UN SELECTOR PARA LLAMAR AL BOTON O ENLACE QUE QUIERO USAR Y LE ASOCIO EL EVENTO CLICK
+    $("#Contacto").click(function (e) {
+        //PREVENGO EL COMPORTAMIENTO POR DEFECTO
+        e.preventDefault();
+        //AGREGO EL METODO ANIMATE    
+        $('html, body').animate({
+            //2° ANIMO LA PROPIEDAD scrollTop POSICIONANDOLO EN EL BORDE DE contenidoContacto
+            scrollTop: $("#contenidoContacto").offset().top  
+            //3° DEFINO UN TIEMPO DE DOS SEGUNDOS PARA LA ANIMACION
+        }, 2000);        
+    })
+    //1° USO UN SELECTOR PARA LLAMAR AL BOTON O ENLACE QUE QUIERO USAR Y LE ASOCIO EL EVENTO CLICK
+    $("#arriba").click(function (e) {
+        e.preventDefault();        
+        $('html, body').animate({
+            //2° ANIMO LA PROPIEDAD scrollTop POSICIONANDOLO EN EL BORDE DE contenidoContacto
+            scrollTop: $(".container").offset().top 
+            //3° DEFINO UN TIEMPO DE DOS SEGUNDOS PARA LA ANIMACION 
+        }, 2000);        
+    })
+
+
+});
+
+$(window).on('load',function () {    
+    $("#espera").remove(); 
+    //AGREGO FADEIN PARA QUE SE MUESTREN LOS PRODUCTOS OCULTOS 
+    $('#productosContenedor').fadeIn(2000, 
+        //Agrego una funcion callback
+        function () {console.log("Funcionalidad Callback")
+        
+    });
+});
+
+//$('#ejemplo').show();
+//$('#ejemplo').fadeOut(4000,function () {console.log('Hola mundo')} );
+
+//Manejo del metodo Toggle desde un boton
+$("#boton1").on("click", function () {
+    $("#ejemplo2").slideToggle(1500);
+})
+//Ejemplo de encadenamiento de animaciones
+$("#ejemplo").animate({fontSize: "30px", opacity: 0.4 },3000).delay(2000).fadeOut(2000);
+//Funcion para crear la interfaz fel select de categorias
+selectUI(categorias,"#selectCategoria");
+//Asocio en evento change al select
+$("#selectCategoria").on("change", buscarCategoria)
+
+
+
 /*
 showrooms.push(new showroom(1, "NIKE", 6));
 showrooms.push(new showroom(2, "ADIDAS", 12));
@@ -7,11 +85,13 @@ showrooms.push(new showroom(5, "LEVIS", 18));
 showrooms.push(new showroom(6, "BENSIMON", 36));
 */
 
-
+/*
 
 const filtroMarcas = showrooms.filter(function (showroom){
     return showroom.nombre === "NIKE";
 })
+
+*/
 
 //LLAMADA ASINCRONA
 //PRIMER PARAMETRO, URL DE MI SERVIDOR PARA OBTENER INFORMACION. 

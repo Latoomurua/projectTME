@@ -1,9 +1,17 @@
-class showroom {
-    constructor(id, nombre, tiempoPublicado) {
-    this.id = parseInt(id);
-    this.nombre = nombre;
-    this.tiempoPublicado = parseInt(tiempoPublicado);
-    this.categoria = categoria;
-    this.imagen = imagen;
+//DECLARACIÓN DE CLASE PRODUCTO
+class Producto {
+    constructor(id, ciudad, precioProducto,img,categoria) {
+            this.id = parseInt(id);
+            this.ciudad = ciudad;
+            this.precioProducto = parseFloat(precioProducto);
+            this.img = img;
+            this.cantidad= 1;
+            this.categoria=categoria;
+    }
+    agregarCantidad(valor){
+        this.cantidad += valor; 
+    }
+    subtotal(){
+        return this.cantidad * this.precio;
     }
 }

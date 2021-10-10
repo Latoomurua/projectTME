@@ -72,7 +72,23 @@
 
 <!-- CONTENIDO -->
 
-<div id="showroomContenedor">
+<div class="container">        
+  <select id="selectCategoria" name="select">
+     <!-- ACA SE GENERAN LAS OPCIONES DESDE JS --> 
+  </select>
+  <hr>
+  <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      CARRITO <span id="carritoCantidad" class="badge badge-light">0</span>
+      </button>
+      <div id="carritoProductos" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <!--ACA SE GENERAN LOS ELEMENTOS DEL CARRITO-->
+      </div>
+  </div>
+  <hr>
+  <div id="productosContenedor" class="card-columns">
+      <!--ACA SE GENERAN LOS PRODUCTOS-->
+  </div>
 </div>
 
 <!-- INICIO FOOTER -->
