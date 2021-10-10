@@ -1,19 +1,55 @@
+/*
 showrooms.push(new showroom(1, "NIKE", 6));
 showrooms.push(new showroom(2, "ADIDAS", 12));
 showrooms.push(new showroom(3, "PUMA", 8));
 showrooms.push(new showroom(4, "REBOOK", 24))
 showrooms.push(new showroom(5, "LEVIS", 18));
 showrooms.push(new showroom(6, "BENSIMON", 36));
+*/
 
 
-//GENERAR INTERFAZ DE PRODUCTOS CON UNA FUNCION
-
-/*showroomUI(showrooms, 'showroomContenedor');*/
 
 const filtroMarcas = showrooms.filter(function (showroom){
     return showroom.nombre === "NIKE";
 })
 
+//LLAMADA ASINCRONA
+//PRIMER PARAMETRO, URL DE MI SERVIDOR PARA OBTENER INFORMACION. 
+//EN ESTE CASO COMO NO TENGO BACKEND, USARE EL ARCHIVO LOCAL
+//EL SEGUNDO PARAMETRO ES LA FUNCION CALLBACK
+//El primer parametro de esta funcion es la respuesta osea los datos que queremos recibir,
+// y el segundo es el estado en que se enceuntra.
+
+//Vamos a pasar esta lista de objetos literales a un conjunto de objetos producto
+//lo vamos a hacer pusheando
+
+//recapitulando, cuando hago el get a esta url recibo los productos y llamo a la funcion callback
+//la funcion callback pregunta el estado en el que esta y si esta todo bien
+//recorro la respuesta. lo transformo todo a tipo producto
+//termino ese for y llamo a showroomUI para mostrar toda la interfaz
+
+
+/*
+$.get("data/productos.json", function(respuesta, estado){
+  for (const objeto of respuesta) {
+    showrooms.push (new showroom(objeto.id, objeto.nombre, objeto.imagen, objeto.categoria, objeto.tiempoPublicado));
+  }
+//GENERAR INTERFAZ DE PRODUCTOS CON UNA FUNCION
+showroomUI(showrooms, 'showroomContenedor');
+});
+*/
+
+
+//Metodo Post
+//el primer parametro, lleva la api a la que le queremos enviar informacion
+//el segundo parametro es la informacion que le queremos enviar
+//la tercera es una funcion de callback
+//tengo que enviar la informacion en formato JSON
+/*
+
+$.post("url", JSON.stringify(informacion), function(respuesta, estado){
+});
+*/
 
 
 //JS EN HTML CON JQUERY
@@ -24,7 +60,7 @@ $(document).ready(() => {
       <img src="/projectTME/TME/images/logoTMENpng.png" alt="Logotipo TME" class="paddingLogo">
       <h1>Otra forma
       <br> de comprar</h1>
-      <button id="botonM" type="button" class="btn btn-warning"><strong>Empeza a comprar</strong></button>   
+      <button id="boton" type="button" class="btn btn-warning"><strong>Empeza a comprar</strong></button>   
     </div>
     <nav class="col-lg-6 col-xs-12 parametrosNav spaceImg">
       <img src="/projectTME/TME/images/igLogo-01.png" width="40" alt="" height="40">
@@ -165,13 +201,3 @@ $(document).ready(() => {
   </footer>`)
 
 });
-
-
-$("#botonM").click(function(e){
-  e.preventDefault();
-  $("html,body").animate({
-      scrollTop: $("#footerTME").offset().top
-  }, 1000);
-})
-
-//despues volvemos al inicio

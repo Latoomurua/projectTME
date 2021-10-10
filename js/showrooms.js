@@ -3,5 +3,7 @@ class showroom {
     this.id = parseInt(id);
     this.nombre = nombre;
     this.tiempoPublicado = parseInt(tiempoPublicado);
+    this.categoria = categoria;
+    this.imagen = imagen;
     }
 }

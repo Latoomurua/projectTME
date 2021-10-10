@@ -60,22 +60,4 @@ $("#ejemplo1").animate({
 //por ultimo tenemos los scroll "animados"  basicamente colocamos 2 id, uno en un boton por ejemplo, y otro hasta donde queres que llegue.
 //primero scrolleamos hasta el catalogo
 
-/*
 
-$("#btnComprarAhora").click(function(e){
-    e.preventDefault();
-    $("html,body").animate({
-        scrollTop: $("#scrollCatalogoMarcas").offset().top
-    }, 2000);
-})
-
-//despues volvemos al inicio
-
-$("#arriba").click(function(e){
-    e.preventDefault();
-    $("html,body").animate({
-        scrollTop: $("#container").offset().top
-    }, 2000);
-})
-
-*/
