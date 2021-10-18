@@ -7387,6 +7387,7 @@
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 0px;
+      opacity: 85%;
   }
 
   .tituloFormSusc{
@@ -7416,4 +7417,13 @@
   border: white;
   border-radius: 15px;
   margin-bottom: 10px;
+}
+
+.btnCards{
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: orange;
+  margin: 0;
+  border-radius: 20px;
 }

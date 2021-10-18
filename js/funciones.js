@@ -9,7 +9,7 @@ function productosUI(productos, id){
                         <p class="card-text">${producto.precioProducto}</p> 
                         <span class="badge badge-warning">
                                        ${producto.categoria}</span>                                           
-                        <a href="#" id='${producto.id}' class="btn btn-primary btn-compra">COMPRAR</a>
+                        <a href="#" id='${producto.id}' class="btnCards btn-primary btn-compra">COMPRAR</a>
                       </div>
                     </div>`);
     }
@@ -112,6 +112,11 @@ function productosUI(productos, id){
     
   }
 
+
+
+
+
+  
 //////////////////////////////////////////////////
 
 

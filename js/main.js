@@ -135,22 +135,6 @@ $.post("url", JSON.stringify(informacion), function(respuesta, estado){
 //JS EN HTML CON JQUERY
 
 $(document).ready(() => {
-    $("#navMenuPrincipal").append(`<div class="row bgImgMenuPrincipal">
-    <div class="col-lg-6 col-xs-12">
-      <img src="/projectTME/TME/images/logoTMENpng.png" alt="Logotipo TME" class="paddingLogo">
-      <h1>Otra forma
-      <br> de comprar</h1>
-      <button id="boton" type="button" class="btn btn-warning"><strong>Empeza a comprar</strong></button>   
-    </div>
-    <nav class="col-lg-6 col-xs-12 parametrosNav spaceImg">
-      <img src="/projectTME/TME/images/igLogo-01.png" width="40" alt="" height="40">
-      <img src="/projectTME/TME/images/fbLogo.png" width="40" alt="" height="40">
-    </nav>
-  </div>`)
-
-});
-
-$(document).ready(() => {
     $("#carouselNovedades").append(`<div class="row">
     <div class="col-lg-12 col-xs-12">
       <h3>Nuevas marcas ingresantes</h1>
@@ -263,21 +247,5 @@ $(document).ready(() => {
       </div>
     </div>
   </div>`)
-
-});
-
-$(document).ready(() => {
-    $("#footerTME").append(`<footer class="row parametrosFooter">
-    <footer class="col-lg-4 col-xs-12 spaceImg">
-      <img src="/projectTME/TME/images/igLogo-01.png" width="40" alt="" height="40">
-      <img src="/projectTME/TME/images/fbLogo.png" width="40" alt="" height="40">
-    </footer>
-    <footer class="col-lg-4">
-      <img src="/projectTME/TME/images/logoTME-01.png" alt="">
-    </footer>
-    <footer class="col-lg-4">
-      <button type="button" class="btn btn-warning" ><strong><a href="/views/quejas.html">Quejas y sugerencias</a></strong></button>
-    </footer>
-  </footer>`)
 
 });
